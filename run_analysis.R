@@ -7,7 +7,7 @@ library(dplyr)
 
 # First load the metadata about the data file
 featureColumns <- read.table("UCI HAR Dataset/features.txt",header=FALSE)
-requiredMeanAndStdCols <- featureColumns$V2[grepl("mean\\(\\)|std\\(\\)",featureColumns$V2)]
+requiredMeanAndStdCols <- featureColumns$V1[grepl("mean\\(\\)|std\\(\\)",featureColumns$V2)]
 
 # Load the test data as tables
 testObservations <- read.table("UCI HAR Dataset/test/X_test.txt",header=FALSE,col.names = featureColumns$V2)
